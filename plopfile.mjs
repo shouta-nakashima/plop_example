@@ -69,6 +69,11 @@ export default function (
                     path: 'src/features/{{newFeatureName}}/components/{{pascalCase componentName}}/index.tsx',
                     templateFile: './plop-templates/components/index.tsx.hbs'
                 })
+                actions.push({
+                    type: 'add',
+                    path: 'src/features/{{newFeatureName}}/components/{{pascalCase componentName}}/{{pascalCase componentName}}.stories.tsx',
+                    templateFile: './plop-templates/components/newFeature.stories.tsx.hbs'
+                })
             }
             if(data.dir === 'features' && data.featureName !== '') {
                 actions.push({
@@ -81,6 +86,11 @@ export default function (
                     path: 'src/features/{{featureName}}/components/{{pascalCase componentName}}/index.tsx',
                     templateFile: './plop-templates/components/index.tsx.hbs'
                 })
+                actions.push({
+                    type: 'add',
+                    path: 'src/features/{{featureName}}/components/{{pascalCase componentName}}/{{pascalCase componentName}}.stories.tsx',
+                    templateFile: './plop-templates/components/feature.stories.tsx.hbs'
+                })
             }
             if(data.dir === 'components') {
                 actions.push({
@@ -92,6 +102,11 @@ export default function (
                     type: 'add',
                     path: 'src/components/{{pascalCase componentName}}/index.tsx',
                     templateFile: './plop-templates/components/index.tsx.hbs'
+                })
+                actions.push({
+                    type: 'add',
+                    path: 'src/components/{{pascalCase componentName}}/{{pascalCase componentName}}.stories.tsx',
+                    templateFile: './plop-templates/components/components.stories.tsx.hbs'
                 })
             }
 
