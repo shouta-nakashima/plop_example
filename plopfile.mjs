@@ -61,22 +61,37 @@ export default function (
             if(data.dir === 'features' && data.featureName === '') {
                 actions.push({
                     type: 'add',
-                    path: 'src/features/{{newFeatureName}}/components/{{pascalCase componentName}}/{{pascalCase componentName}}.tsx',
+                    path: 'src/features/{{newFeatureName}}/components/{{pascalCase componentName}}/presenter.tsx',
                     templateFile: './plop-templates/components/Component.tsx.hbs'
+                })
+                actions.push({
+                    type: 'add',
+                    path: 'src/features/{{newFeatureName}}/components/{{pascalCase componentName}}/index.tsx',
+                    templateFile: './plop-templates/components/index.tsx.hbs'
                 })
             }
             if(data.dir === 'features' && data.featureName !== '') {
                 actions.push({
                     type: 'add',
-                    path: 'src/features/{{featureName}}/components/{{pascalCase componentName}}/{{pascalCase componentName}}.tsx',
+                    path: 'src/features/{{featureName}}/components/{{pascalCase componentName}}/presenter.tsx',
                     templateFile: './plop-templates/components/Component.tsx.hbs'
+                })
+                actions.push({
+                    type: 'add',
+                    path: 'src/features/{{featureName}}/components/{{pascalCase componentName}}/index.tsx',
+                    templateFile: './plop-templates/components/index.tsx.hbs'
                 })
             }
             if(data.dir === 'components') {
                 actions.push({
                     type: 'add',
-                    path: 'src/components/{{pascalCase componentName}}/{{pascalCase componentName}}.tsx',
+                    path: 'src/components/{{pascalCase componentName}}/presenter.tsx',
                     templateFile: './plop-templates/components/Component.tsx.hbs'
+                })
+                actions.push({
+                    type: 'add',
+                    path: 'src/components/{{pascalCase componentName}}/index.tsx',
+                    templateFile: './plop-templates/components/index.tsx.hbs'
                 })
             }
 
